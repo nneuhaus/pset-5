@@ -53,6 +53,7 @@ const drawRectangle = function() {
     rectangleY = window.prompt('Y:');
     const canvas = document.getElementById('student-canvas-2');
     const ctx = canvas.getContext('2d');
+    ctx.strokeText(rectangle, 30, 70, 994);
 
 
 };
