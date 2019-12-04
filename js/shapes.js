@@ -53,7 +53,6 @@ const drawRectangle = function() {
     rectangleY = window.prompt('Y:');
     const canvas = document.getElementById('student-canvas-2');
     const ctx = canvas.getContext('2d');
-    ctx.clearRect(1, 1, canvas.width, canvas.height);
 
 
 };
