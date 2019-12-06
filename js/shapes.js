@@ -47,7 +47,7 @@ const sayHello = function() {
  */
 
 const drawRectangle = function() {
-  do{
+  do {
     rectangleW = window.prompt('Width:');
     rectangleH = window.prompt('Height:');
     rectangleX = window.prompt('X:');
@@ -65,7 +65,11 @@ const drawRectangle = function() {
  */
 
 const drawColoredRectangle = function() {
-    // write your exercise 3 code here
+    color = window.prompt('Color:')
+    while (color = 'black' || color = 'Black' || color = 'blue' || color = 'Blue' || color = 'green' || color = 'Green' || color = 'orange' || color = 'Orange' || color = 'purple' || color = 'Purple' || color = 'red' || color = 'Red' || color = 'yellow' || color = 'Yellow'){
+      const canvas = document.getElementById('student-canvas-3');
+
+    }
 };
 
 /*
