@@ -69,7 +69,7 @@ ctx.clearRect(0,0,canvas.width,canvas.height)
     ctx.strokeRect(rectangleX, rectangleY, rectangleW, rectangleH);
   }
 };
-
+//to fix: won't draw :}
 
 /*
  * Exercise 3.
