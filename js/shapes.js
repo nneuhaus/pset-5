@@ -47,16 +47,27 @@ const sayHello = function() {
  */
 
 const drawRectangle = function() {
+  const canvas = document.getElementById('student-canvas-2');
+  const ctx = canvas.getContext('2d');
+ctx.clearRect(0,0,canvas.width,canvas.height)
   do {
     rectangleW = window.prompt('Width:');
     rectangleH = window.prompt('Height:');
     rectangleX = window.prompt('X:');
     rectangleY = window.prompt('Y:');
-  } while (width > 1024 || width < 1 || height > 1024 || height < 1)
-    const canvas = document.getElementById('student-canvas-2');
-    const ctx = canvas.getContext('2d');
-    ctx.strokeRect(x, y, width, height);
-    ctx.clearRect(0,0,canvas.width,canvas.height)
+  } while (rectangleW > canvas.width || rectangleW < 1) {
+      alert("Your width must be between 1 and 1024.")
+  } while (rectangleH > canvas.height || rectangleH < 1) {
+       alert("Your height must be between 1 and 512.")
+  } while (x < 1 || x > 1024) {
+       alert("Your x-coordinate must be between 1 and 1024.")
+  } while (y < 1 || y > 512) {
+       alert("Your y-coordinate must be between 1 and 512.")
+  } while (isNaN(rectangleW) || isNaN(rectangleH) || isNaN(x) || isNaN(y)) {
+       alert("One of your values is not a number.")
+  } while (rectangleW > canvas.width || rectangleW < 1 || rectangleH > canvas.height || rectangleH < 1 || x < 1 || x > 1024 || y < 1 || y > 512 || isNaN(rectangleW) || isNaN(rectangleH) || isNaN(x) || isNaN(y)) {
+    ctx.strokeRect(rectangleX, rectangleY, rectangleW, rectangleH);
+  }
 };
 
 
