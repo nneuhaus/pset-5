@@ -47,16 +47,18 @@ const sayHello = function() {
  */
 
 const drawRectangle = function() {
+  do{
     rectangleW = window.prompt('Width:');
     rectangleH = window.prompt('Height:');
     rectangleX = window.prompt('X:');
     rectangleY = window.prompt('Y:');
+  } while (width > 1024 || width < 1 || height > 1024 || height < 1)
     const canvas = document.getElementById('student-canvas-2');
     const ctx = canvas.getContext('2d');
-    ctx.strokeText(rectangle, 30, 70, 994);
-
-
+    ctx.strokeRect(x, y, width, height);
+    ctx.clearRect(0,0,canvas.width,canvas.height)
 };
+
 
 /*
  * Exercise 3.
