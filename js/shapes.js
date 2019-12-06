@@ -66,10 +66,11 @@ const drawRectangle = function() {
 
 const drawColoredRectangle = function() {
     color = window.prompt('Color:')
-    while (color = 'black' || color = 'Black' || color = 'blue' || color = 'Blue' || color = 'green' || color = 'Green' || color = 'orange' || color = 'Orange' || color = 'purple' || color = 'Purple' || color = 'red' || color = 'Red' || color = 'yellow' || color = 'Yellow'){
+    //while (color = 'black' || color = 'Black' || color = 'blue' || color = 'Blue' || color = 'green' || color = 'Green' || color = 'orange' || color = 'Orange' || color = 'purple' || color = 'Purple' || color = 'red' || color = 'Red' || color = 'yellow' || color = 'Yellow')
       const canvas = document.getElementById('student-canvas-3');
+      const ctx = canvas.getContext('2d');
+      ctx.strokeRect(10,10,100,50);
 
-    }
 };
 
 /*
