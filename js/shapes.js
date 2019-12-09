@@ -51,24 +51,38 @@ const drawRectangle = function() {
   const ctx = canvas.getContext('2d');
 ctx.clearRect(0,0,canvas.width,canvas.height)
   do {
-    rectangleW = window.prompt('Width:');
-    rectangleH = window.prompt('Height:');
-    rectangleX = window.prompt('X:');
-    rectangleY = window.prompt('Y:');
-  } while (rectangleW > canvas.width || rectangleW < 1) {
+    var rectangleW = window.prompt('Width:');
+    if (rectangleW == null) {
+      break;
+    }
+    var rectangleH = window.prompt('Height:');
+    if (rectangleW == null) {
+      break;
+    }
+    var rectangleX = window.prompt('X:');
+    if (rectangleX == null) {
+      break;
+    }
+    var rectangleY = window.prompt('Y:');
+    if (rectangleW == null) {
+      break;
+    }
+  if (rectangleW > canvas.width || rectangleW < 1) {
       alert("Your width must be between 1 and 1024.")
-  } while (rectangleH > canvas.height || rectangleH < 1) {
+  } if (rectangleH > canvas.height || rectangleH < 1) {
        alert("Your height must be between 1 and 512.")
-  } while (x < 1 || x > 1024) {
+  } if (rectangleX < 1 || rectangleX > 1024) {
        alert("Your x-coordinate must be between 1 and 1024.")
-  } while (y < 1 || y > 512) {
+  } while (rectangleY < 1 || rectangleY > 512) {
        alert("Your y-coordinate must be between 1 and 512.")
   } while (isNaN(rectangleW) || isNaN(rectangleH) || isNaN(x) || isNaN(y)) {
        alert("One of your values is not a number.")
-  } while (rectangleW > canvas.width || rectangleW < 1 || rectangleH > canvas.height || rectangleH < 1 || x < 1 || x > 1024 || y < 1 || y > 512 || isNaN(rectangleW) || isNaN(rectangleH) || isNaN(x) || isNaN(y)) {
-    ctx.strokeRect(rectangleX, rectangleY, rectangleW, rectangleH);
-  }
-};
+}
+  } while (rectangleW > canvas.width || rectangleW < 1 || rectangleH > canvas.height || rectangleH < 1 || x < 1 || x > 1024 || y < 1 || y > 512 || isNaN(rectangleW) || isNaN(rectangleH) || isNaN(x) || isNaN(y))
+     ctx.clearRect(0, 0, canvas.width, canvas.height);
+     ctx.strokeRect(rectangleX, rectangleY, rectangleW, rectangleH);
+
+  };
 //to fix: won't draw :}
 
 /*
