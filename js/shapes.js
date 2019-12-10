@@ -75,12 +75,12 @@ ctx.clearRect(0,0,canvas.width,canvas.height)
        alert("Your x-coordinate must be between 1 and 1024.")
   } while (rectangleY < 1 || rectangleY > 512) {
        alert("Your y-coordinate must be between 1 and 512.")
-  } while (isNaN(rectangleW) || isNaN(rectangleH) || isNaN(x) || isNaN(y)) {
+  } while (isNaN(rectangleW) || isNaN(rectangleH) || isNaN(rectangleX) || isNaN(rectangleY)) {
        alert("One of your values is not a number.")
 }
-  } while (rectangleW > canvas.width || rectangleW < 1 || rectangleH > canvas.height || rectangleH < 1 || x < 1 || x > 1024 || y < 1 || y > 512 || isNaN(rectangleW) || isNaN(rectangleH) || isNaN(x) || isNaN(y))
-     ctx.clearRect(0, 0, canvas.width, canvas.height);
-     ctx.strokeRect(rectangleX, rectangleY, rectangleW, rectangleH);
+} while (rectangleW > canvas.width || rectangleW < 1 || rectangleH > canvas.height || rectangleH < 1 || rectangleX < 1 || rectangleX > 1024 || rectangleY < 1 || rectangleY > 512 || isNaN(rectangleW) || isNaN(rectangleH) || isNaN(rectangleX) || isNaN(rectangleY))
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.strokeRect(rectangleX, rectangleY, rectangleW, rectangleH);
 
   };
 //to fix: won't draw :}
