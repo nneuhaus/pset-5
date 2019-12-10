@@ -117,8 +117,23 @@ const drawColoredRectangle = function() {
  */
 
 const drawTriangle = function() {
-    // write your exercise 4 code here
-};
+  const canvas = document.getElementById('student-canvas-4');
+  const ctx = canvas.getContext('2d');
+  ctx.clearTri(0,0,canvas.width,canvas.height);
+  do {
+    var side1 = (prompt("Side 1:"));
+    var side2 = (prompt("Side 2:"));
+    var side3 = (prompt("Side 3:"));
+    }
+  while  (side1.isNaN || side2.isNaN || side3.isNan) {
+      side1 = (prompt("Side 1:"));
+      side2 = (prompt("Side 2:"));
+      side3 = (prompt("Side 3:"));
+    }
+  }
+
+
+
 
 /*
  * Exercise 5.
