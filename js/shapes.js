@@ -172,7 +172,7 @@ if ((base*base + height*height == hypotenuse*hypotenuse) && (base <1024 && heigh
  */
 
 const drawFace = function() {
-    // write your exercise 4 code here
+    // write your exercise 5 code here
 };
 
 /*
@@ -180,5 +180,5 @@ const drawFace = function() {
  */
 
 const drawPyramid = function() {
-    // write your exercise 5 code here
+    // write your exercise 6 code here
 };
