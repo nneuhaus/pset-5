@@ -158,6 +158,8 @@ if ((base*base + height*height == hypotenuse*hypotenuse) && (base <1024 && heigh
   ctx.moveTo(25,25);
   ctx.lineTo(25, height);
   ctx.lineTo(25, 25)
+  ctx.lineto(base,25)
+  ctx.lineto(hypotenuse,hypotenuse)
   ctx.stroke();
 }
 
