@@ -155,16 +155,14 @@ if ((base*base + height*height == hypotenuse*hypotenuse) && (base <1024 && heigh
   height = height + 25
   base = base + 25
   ctx.beginPath();
-  ctx.moveTo(25,25);
-  ctx.lineTo(25, height);
+  ctx.moveTo(25, height);
+  ctx.lineTo(base, height);
   ctx.lineTo(25, 25);
+  ctx.lineTo(25, height);
   ctx.stroke();
 }
 
 }
-
-
-
 
 
 /*
@@ -172,13 +170,93 @@ if ((base*base + height*height == hypotenuse*hypotenuse) && (base <1024 && heigh
  */
 
 const drawFace = function() {
-    // write your exercise 5 code here
-};
+  canvas = document.getElementById('student-canvas-5');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.height, canvas.width);
+
+  do {
+    var radius = (prompt("Radius: "))
+    if (radius == null) {
+      break;
+    }
+    if (radius < 32) {
+      alert("Your radius must be at least 32.")
+    }
+    else if (isNaN(radius)) {
+      alert("Your radius is not a number.")
+    }
+    else if (radius > 256) {
+      alert("Your smiley face won't fit on the canvas.")
+    }
+  } while (radius > 256 || isNaN(radius) || radius < 32)
+
+  var eyesRadius = 0.15 * radius
+  var mouthRadius = 0.7 * radius
+
+  ctx.beginPath();
+  ctx.arc(512, 256, radius, 0, 2 * Math.PI);
+  ctx.stroke();
+  ctx.closePath();
+  ctx.beginPath();
+  ctx.arc(512, 256, mouthRadius, 0, Math.PI);
+  ctx.stroke();
+  ctx.closePath();
+  ctx.beginPath();
+  ctx.arc(512 - 0.4 * radius, 256 - 0.4 * radius, eyesRadius, 0, 2 * Math.PI);
+  ctx.stroke();
+  ctx.closePath();
+  ctx.beginPath();
+  ctx.arc(512 + 0.4 * radius, 256 - 0.4* radius, eyesRadius, 0, 2 * Math.PI);
+  ctx.stroke();
+  ctx.closePath();
+}
 
 /*
  * Exercise 6 (extra credit).
  */
 
 const drawPyramid = function() {
-    // write your exercise 6 code here
-};
+    const canvas = document.getElementById("student-canvas-6");
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var distance = 0;
+    var height = 0;
+    var adjustingDistance = 0;
+    var adjustingHeight = 0;
+    var check = 5;
+    var side;
+
+    do {
+        var side = prompt("Side: ")
+        if (side == null) {
+          break;
+        }
+        if (side < 1) {
+         alert("Your block size must be at least 1.")
+        }
+        else if (side > 100) {
+         alert("Your pyramid won't fit on the canvas")
+        }
+        else if (isNaN(side)) {
+         alert("Your block size is not a number.")
+        }
+      } while (isNaN(side) || side > 100 || side < 1)
+      distance = Number(distance);
+      height = Number(height);
+      side = Number(side);
+      for (x = 5; x > 0; x--) {
+      check = x
+      while(check >= 1) {
+       ctx.beginPath();
+       ctx.rect(10 + distance, (502 - side) - height, side,  side);
+       ctx.stroke();
+       ctx.closePath();
+       distance = distance + side
+       check--
+      }
+       adjustingDistance++
+       distance = adjustingDistance * (1/2 * side)
+       adjustingHeight++
+       height = adjustingHeight * side
+      }
+}
